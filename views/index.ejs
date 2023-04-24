@@ -3,7 +3,31 @@
     <%- include('partials/header') %>
 </head>
 <body>
-    <h1>Hello world</h1>
-    <a href="/form">Yeah</a>
+    <h1>Gjestebok:</h1>
+    <form id="nameInsertForm" onsubmit="event.preventDefault()">
+        <label for="nameInsert">Vennligst skriv inn navnet ditt:</label>
+        <input id="nameInsert" type="text">
+        <button type="submit">Send inn</button>
+    </form>
+
+    <div id="welcomeMsg">
+
+    </div>
+
+    <main>
+        <div id="counter">
+            <h1>Ditt lykketall dette minuttet:</h1>
+            <h1>:)</h1>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Takk til våre supportere:</h3>
+        <ul id="peopleList">
+            
+        </ul>
+    </footer>
+
+    <script src="JS/index.js"></script>
 </body>
 </html>
