@@ -2,7 +2,7 @@ const Thing = require("../models/Object");
 
 //controllers
 module.exports.home_get = (req, res) => {
-    res.render("index", {title: "Index"});
+    res.render("index", {title: "Hjem"});
 }
 
 module.exports.form_get = (req, res) => {

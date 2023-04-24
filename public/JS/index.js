@@ -1,7 +1,7 @@
 const nameInsertForm = document.querySelector("form#nameInsertForm");
 const welcomeMsg = document.querySelector("div#welcomeMsg");
 const counter = document.querySelector("div#counter h1#number");
-const peopleList = document.querySelector("ul#peopleList");
+const peopleList = document.querySelector("footer");
 
 let remainSec;
 let peopleArray = [];
@@ -37,7 +37,7 @@ if(localStorage.getItem("Names")){
     peopleArray = JSON.parse(localStorage.getItem("Names"))
     peopleArray.forEach(person => {
         let template = `
-            <li>${person}</li>
+            <p>${person}</p>
         `;
         peopleList.innerHTML += template;
     });

@@ -1,17 +1,19 @@
 <html lang="no">
 <head>
     <%- include('partials/header') %>
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <h1>Gjestebok:</h1>
-    <form id="nameInsertForm" onsubmit="event.preventDefault()">
-        <label for="nameInsert">Vennligst skriv inn navnet ditt:</label>
-        <input id="nameInsert" type="text">
-        <button type="submit">Send inn</button>
-    </form>
-
-    <div id="welcomeMsg">
-
+    <div id="topBanner">
+        <form id="nameInsertForm" onsubmit="event.preventDefault()">
+            <h1>Bli en supporter!</h1>
+            <label for="nameInsert">Vennligst skriv inn navnet ditt:</label>
+            <input id="nameInsert" type="text">
+            <button type="submit">Send inn</button>
+        </form>
+        <div id="welcomeMsg">
+    
+        </div>
     </div>
 
     <main>
@@ -23,9 +25,6 @@
 
     <footer>
         <h3>Takk til våre supportere:</h3>
-        <ul id="peopleList">
-            
-        </ul>
     </footer>
 
     <script src="JS/index.js"></script>
