@@ -24,6 +24,11 @@ main{
     text-align: center;
 }
 
+#luckInput{
+    width: 25%;
+    text-align: center;
+}
+
 #number{
     font-size: 50px;
 }

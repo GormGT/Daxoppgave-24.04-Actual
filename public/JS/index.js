@@ -1,11 +1,13 @@
 // deklarasjoner
 const nameInsertForm = document.querySelector("form#nameInsertForm");
+const luckForm = document.querySelector("form#luckForm");
 const welcomeMsg = document.querySelector("div#welcomeMsg");
 const counter = document.querySelector("div#counter h1#number");
 const peopleList = document.querySelector("footer");
 
 let remainSec;
 let peopleArray = [];
+let luckNum;
 
 // oppdater klokken
 function updateClock(){
@@ -28,6 +30,9 @@ setInterval(updateClock, 1000);
 function genNum(){
     let num = Math.floor(Math.random() * 100);
     counter.innerHTML = num;
+    if(num = luckNum){
+        console.log("It sure is your lucky day huh");
+    }
 }
 
 // hent ut navn fra sessionstorage
@@ -61,6 +66,10 @@ nameInsertForm.addEventListener("submit", (e) => {
     <h2>Velkommen, vi ønsker deg alt som er godt, ${name}</h2>
     `;
     welcomeMsg.innerHTML = template;
+})
+
+luckForm.addEventListener("submit", () => {
+    luckNum = luckForm.luckInput.value;
 })
 
 // kjør funksjoner

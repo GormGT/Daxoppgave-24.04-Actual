@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
+    <!--Banneret på toppen av siden-->
     <div id="topBanner">
         <form id="nameInsertForm" onsubmit="event.preventDefault()">
             <h1>Bli en supporter!</h1>
@@ -11,11 +12,18 @@
             <input id="nameInsert" type="text">
             <button type="submit">Send inn</button>
         </form>
+        <form id="luckForm" onsubmit="event.preventDefault()">
+            <h1>Prøv lykken</h1>
+            <label for="luckInput">Skriv et tall mellom 0-100:</label>
+            <input id="luckInput" type="text">
+            <button type="submit">Send inn</button>
+        </form>
         <div id="welcomeMsg">
     
         </div>
     </div>
 
+    <!--Hoveddelen med lykketallet-->
     <main>
         <div id="counter">
             <h1>Ditt lykketall dette minuttet:</h1>
@@ -23,6 +31,7 @@
         </div>
     </main>
 
+    <!--Listen over supportere.-->
     <footer>
         <h3>Takk til våre supportere:</h3>
     </footer>
