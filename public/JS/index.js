@@ -1,4 +1,5 @@
 // deklarasjoner
+const body = document.querySelector("body");
 const nameInsertForm = document.querySelector("form#nameInsertForm");
 const luckForm = document.querySelector("form#luckForm");
 const welcomeMsg = document.querySelector("div#welcomeMsg");
@@ -7,6 +8,7 @@ const peopleList = document.querySelector("footer");
 
 let remainSec;
 let peopleArray = [];
+// let colorArray = ["yellow", "orange", "red", "pink", "purple", "blue", "green", "gray"];
 let luckNum;
 
 // oppdater klokken
@@ -30,8 +32,12 @@ setInterval(updateClock, 1000);
 function genNum(){
     let num = Math.floor(Math.random() * 100);
     counter.innerHTML = num;
-    if(num = luckNum){
+    if(num == luckNum){
         console.log("It sure is your lucky day huh");
+        let randCol = Math.floor(Math.random()*16777215).toString(16);
+        body.style.backgroundColor = "#" + randCol;
+    }else{
+        body.style.backgroundColor = "white";
     }
 }
 
