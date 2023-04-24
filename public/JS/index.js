@@ -36,6 +36,9 @@ function genNum(){
         console.log("It sure is your lucky day huh");
         let randCol = Math.floor(Math.random()*16777215).toString(16);
         body.style.backgroundColor = "#" + randCol;
+        setTimeout(() => {
+            alert("DETTE ER DIN NYE LYKKEFARGE");
+        }, 100)
     }else{
         body.style.backgroundColor = "white";
     }
