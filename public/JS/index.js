@@ -1,3 +1,4 @@
+// deklarasjoner
 const nameInsertForm = document.querySelector("form#nameInsertForm");
 const welcomeMsg = document.querySelector("div#welcomeMsg");
 const counter = document.querySelector("div#counter h1#number");
@@ -6,10 +7,10 @@ const peopleList = document.querySelector("footer");
 let remainSec;
 let peopleArray = [];
 
+// oppdater klokken
 function updateClock(){
     let date = new Date();
     remainSec = 60 - date.getSeconds().toString();
-    //console.log("Counting...", date.getSeconds().toString(), remainSec, date.getMinutes().toString());
 
     if(remainSec == 60){
         console.clear();
@@ -18,13 +19,18 @@ function updateClock(){
     }
 }
 
+// oppdater klokken hvert sekund
 setInterval(updateClock, 1000);
 
+// funksjoner
+
+// generer et lykketall
 function genNum(){
     let num = Math.floor(Math.random() * 100);
     counter.innerHTML = num;
 }
 
+// hent ut navn fra sessionstorage
 if(sessionStorage.getItem("TypedName")){
     let name = sessionStorage.getItem("TypedName");
     let template = `
@@ -33,6 +39,7 @@ if(sessionStorage.getItem("TypedName")){
     welcomeMsg.innerHTML = template;
 }
 
+// hent ut supportere fra localstorage
 if(localStorage.getItem("Names")){
     peopleArray = JSON.parse(localStorage.getItem("Names"))
     peopleArray.forEach(person => {
@@ -43,9 +50,9 @@ if(localStorage.getItem("Names")){
     });
 }
 
+// kjør når navn blir submitta
 nameInsertForm.addEventListener("submit", (e) => {
     const name = nameInsertForm.nameInsert.value;
-    //localStorage.setItem("TypedName", name); //REdo this
     peopleArray.push(name);
     localStorage.setItem("Names", JSON.stringify(peopleArray));
     sessionStorage.setItem("TypedName", name);
@@ -56,5 +63,6 @@ nameInsertForm.addEventListener("submit", (e) => {
     welcomeMsg.innerHTML = template;
 })
 
+// kjør funksjoner
 genNum();
 updateClock();
